@@ -1,22 +1,3 @@
-# from selenium import webdriver
-# from selenium.webdriver.common.by import By
-# from selenium.webdriver.common.keys import Keys
-# import time
-
-
-# driver = webdriver.Chrome()
-# driver.maximize_window()
-
-# driver.get("https://www.zoom.com.br/notebook")
-# time.sleep(3)
-
-# div = driver.find_element(By.CLASS_NAME, 'AllFiltersButton_AllFilters___ayQd')
-
-# div_button = div.find_element(By.TAG_NAME('button'))
-# div_button.click()
-
-# driver.quit()
-
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
@@ -39,17 +20,63 @@ time.sleep(1)
 numero = 2
 
 for i in range(3):
-    if(i == 0):
-        driver.execute_script("window.scrollTo(0, 3800);")
+    if i == 0:
+        driver.execute_script("window.scrollTo(0, 3700);")
     else:
         driver.execute_script("window.scrollTo(0, 3300);")
     time.sleep(2)
 
-    botao_proxima_pagina = driver.find_element(By.XPATH, f'//a[@aria-label="Página {numero}"]')
+    botao_proxima_pagina = driver.find_element(
+        By.XPATH, f'//a[@aria-label="Página {numero}"]'
+    )
     numero = numero + 1
-    if(i != 3):
+    if i != 2:
         botao_proxima_pagina.click()
+    else:
+        driver.execute_script("window.scrollTo(0, 0);")
+        time.sleep(2)
+        
+        driver.get("https://www.zoom.com.br/search?q=notebook&hitsPerPage=24&refinements%5B0%5D%5Bid%5D=price&refinements%5B0%5D%5Branges%5D%5Bmin%5D=24.99&refinements%5B0%5D%5Branges%5D%5Bmax%5D=3250&sortBy=default&isDealsPage=false&enableRefinementsSuggestions=true")
+        numero = 2
+        time.sleep(2)
+        for i in range(3):
+            if i == 0:
+                driver.execute_script("window.scrollTo(0, 3700);")
+            else:
+                driver.execute_script("window.scrollTo(0, 3300);")
+            time.sleep(2)
 
-pagina1_pesquisa = driver.current_url
+            botao_proxima_pagina = driver.find_element(
+                By.XPATH, f'//a[@aria-label="Página {numero}"]'
+            )
+            numero = numero + 1
+            if i != 2:
+                botao_proxima_pagina.click()
+            else:
+                driver.execute_script("window.scrollTo(0, 0);")
+                time.sleep(2)
+                driver.get("https://www.zoom.com.br/search?q=notebook&hitsPerPage=24&refinements%5B0%5D%5Bid%5D=rating&refinements%5B0%5D%5Branges%5D%5Bmin%5D=4&sortBy=default&isDealsPage=false&enableRefinementsSuggestions=true")
+                numero = 2
+        time.sleep(2)
+        for i in range(3):
+            if i == 0:
+                driver.execute_script("window.scrollTo(0, 3700);")
+            else:
+                driver.execute_script("window.scrollTo(0, 3300);")
+            time.sleep(2)
+
+            botao_proxima_pagina = driver.find_element(
+                By.XPATH, f'//a[@aria-label="Página {numero}"]'
+            )
+            numero = numero + 1
+            if i != 2:
+                botao_proxima_pagina.click()
+            else:
+                driver.execute_script("window.scrollTo(0, 0);")
+                time.sleep(2)
+
+
+        
+
 
 driver.close()
