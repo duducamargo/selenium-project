@@ -1,23 +1,23 @@
-# Extração de Produtos de Site de Compras
+# Product Extraction from Shopping Website
 
-Este projeto utiliza Selenium para navegar em um site de compras, alternando entre diferentes filtros de pesquisa. O objetivo é extrair os produtos que aparecem em todas as buscas realizadas, permitindo a identificação dos itens mais relevantes de forma eficiente.
+This project uses Selenium to navigate a shopping website, switching between different search filters. The goal is to extract the products that appear in all searches performed, allowing efficient identification of the most relevant items.
 
-## Funcionalidades
+## Features
 
-- **Busca por Produtos:** Realiza pesquisas por termos específicos, como "notebook".
-- **Extração de Produtos:** Extrai nomes de produtos de páginas de resultados, considerando diferentes filtros (sem filtros, menores preços, melhores avaliados).
-- **Identificação de Produtos Comuns:** Identifica e salva os produtos que aparecem em todas as pesquisas, permitindo uma análise mais eficaz.
+- **Product Search**: Performs searches for specific terms, such as "laptop."
+- **Product Extraction**: Extracts product names from result pages, considering different filters (no filters, lowest prices, top-rated).
+- **Common Product Identification**: Identifies and saves the products that appear in all searches, enabling more effective analysis.
 
-## Tecnologias Utilizadas
+## Technologies Used
 
-- **Python:** Linguagem de programação principal.
-- **Selenium:** Biblioteca para automação de navegadores, utilizada para interagir com o site de compras.
-- **WebDriver:** Ferramenta para controlar o navegador Chrome.
-- **XPATH:** Utilizado para localizar elementos no DOM da página.
+- **Python**: Main programming language.
+- **Selenium**: Browser automation library used to interact with the shopping website.
+- **WebDriver**: Tool for controlling the Chrome browser.
+- **XPATH**: Used to locate elements in the page DOM.
 
-## Como Usar
+## How to Use
 
-1. **Clone o repositório:**
+1. **Clone the repository:**
 
    ```bash
    git clone https://github.com/duducamargo/selenium-project.git
